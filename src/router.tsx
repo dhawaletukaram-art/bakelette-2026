@@ -54,7 +54,7 @@ function DefaultErrorComponent({ error, reset }: { error: Error; reset: () => vo
   );
 }
 
-export function createAppRouter() {
+export function getRouter() {
   const router = createTanStackRouter({
     routeTree,
     context: {},
@@ -68,6 +68,6 @@ export function createAppRouter() {
 
 declare module "@tanstack/react-router" {
   interface Register {
-    router: ReturnType<typeof createAppRouter>;
+    router: ReturnType<typeof getRouter>;
   }
 }

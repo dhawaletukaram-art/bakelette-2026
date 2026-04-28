@@ -2,8 +2,8 @@ import {
   createStartHandler,
   defaultStreamHandler,
 } from "@tanstack/react-start/server";
-import { createAppRouter } from "./router";
+import { getRouter } from "./router";
 
 export default createStartHandler({
-  createRouter: createAppRouter,
+  createRouter: getRouter,
 })(defaultStreamHandler);
