@@ -76,11 +76,25 @@ export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
+
+/* ROUTE_MANIFEST_START
+{
+  "routes": {
+    "__root__": {
+      "filePath": "__root.tsx",
+      "children": [
+        "/",
+        "/api/track"
+      ]
+    },
+    "/": {
+      "filePath": "index.tsx",
+      "parent": "__root__"
+    },
+    "/api/track": {
+      "filePath": "api/track.ts",
+      "parent": "__root__"
+    }
   }
 }
+ROUTE_MANIFEST_END */
